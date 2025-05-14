@@ -5,16 +5,16 @@
 Try accessing all three variables from an object of the class and document what happens. '''
 
 class Employee:
-    def __init__(self, name: str, salary: int, ssn: int):
+    def __init__(self, name: str, salary: int, ssn: int) -> None:
         self.name = name
         self._salary = salary
         self.__ssn = ssn
 
-e1 = Employee('Rehman', 1200, 1.2)
+e1: Employee = Employee('Rehman', 1200, 1.2)
 print(e1.name)    # public
 print(e1._salary) # protected
 
-# print(e1._Employee__ssn) # name mangling texhnique of accessing
+# print(e1._Employee__ssn)     # name mangling technique of accessing.
 
 try:
     print(e1.__ssn)   # private

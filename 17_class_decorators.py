@@ -2,7 +2,7 @@
     "Hello from Decorator!". Apply it to a class Person.'''
 
 def add_greeting(cls):
-    def greet(self):
+    def greet(self) -> str:
         return 'Hello from Decorator!'
     
     cls.greet = greet
@@ -10,8 +10,8 @@ def add_greeting(cls):
 
 @add_greeting
 class Person:
-    def __init__(self, name):
+    def __init__(self, name: str) -> None:
         self.name = name
 
-y1 = Person('Bilal')
+y1: Person = Person('Bilal')
 print(y1.greet())
